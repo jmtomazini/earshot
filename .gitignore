@@ -1,0 +1,13 @@
+# The list of names and everything derived from it stay out of version control.
+names.txt
+settings.txt
+data/
+report.html
+matches.csv
+diagnostics.txt
+coverage_audit.txt
+coverage_audit.csv
+__pycache__/
+model_comparison.txt
+model_comparison.csv
+.DS_Store

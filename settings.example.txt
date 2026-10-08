@@ -1,0 +1,31 @@
+# SETTINGS (optional)
+#
+# Copy this file to settings.txt to switch on the language-model step.
+# Without a settings.txt, or with model_address left out, the step is off and
+# the names are sent nowhere.
+#
+# What the step does: for each new match, the person's name and about 1,400
+# characters of text around it are sent to the model named below. The model
+# answers whether the article is about that person or about a namesake, and
+# gives its reason. Both are shown in the report. No match is ever removed.
+#
+# Test it first:   python3 earshot.py --check-model
+
+# --- A model running on this computer, through Ollama (https://ollama.com) ---
+# model_address = http://localhost:11434/v1
+# model_name = qwen3:14b
+
+# --- Qwen3 models reason step by step before answering, which is slow (about 35 s per
+# match on a 24 GB Mac). "thinking = off" makes them answer straight away. Faster;
+# whether it is as accurate has not been measured. Other models ignore it. ---
+# thinking = off
+
+# --- One line saying who the people on your list are, to help the model ---
+# context = researchers at Example University
+
+# --- A model on another computer, for example your institution's own server ---
+# The names are sent there, so this has to be switched on explicitly.
+# model_address = https://models.example.org/v1
+# model_name = name-of-the-model
+# model_key = the key that server gave you, if it needs one
+# allow_remote_model = yes

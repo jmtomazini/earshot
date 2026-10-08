@@ -1,0 +1,71 @@
+# FEEDS TO DOWNLOAD
+# One feed per line:   Label | feed address
+# Add "| headlines-only" to stop the script opening that outlet's article pages.
+# A line in [square brackets] is the press group shown in the report.
+# Lines starting with # are ignored.
+#
+# To test every address:             python3 earshot.py --check-feeds
+# To measure how much is readable:   python3 earshot.py --audit
+#
+# The notes below record what the runs of 6 and 7 October 2026 on one Mac showed.
+
+[EU policy press]
+EUobserver | https://euobserver.com/rss
+Euronews | https://www.euronews.com/rss?format=mrss&level=theme&name=news
+# Euractiv relaunched as Rapporteur at the end of September 2026. The old feed address
+# still works and its articles are on rapporteur.com. The site refuses many article requests,
+# and on 7 October it refused the feed itself (HTTP 403).
+Rapporteur (formerly Euractiv) | https://www.euractiv.com/feed/
+POLITICO Europe | https://www.politico.eu/feed/
+
+[European prestige press]
+The Guardian - Europe | https://www.theguardian.com/world/europe-news/rss
+BBC News - Europe | https://feeds.bbci.co.uk/news/world/europe/rss.xml
+# Le Monde answers article requests with a bot check page: only headline and summary are read.
+Le Monde in English | https://www.lemonde.fr/en/rss/une.xml
+# Slow feed: about 20 items in four months.
+Der Spiegel International | https://www.spiegel.de/international/index.rss
+El País - Internacional | https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/internacional/portada
+FAZ - Politik | https://www.faz.net/rss/aktuell/politik/
+Deutsche Welle - Europe | https://rss.dw.com/rdf/rss-en-eu
+# FT and Economist article pages refuse the script: headline and summary only.
+Financial Times - Europe | https://www.ft.com/world/europe?format=rss | headlines-only
+The Economist - Europe | https://www.economist.com/europe/rss.xml | headlines-only
+
+[Italian national press]
+ANSA - Mondo | https://www.ansa.it/sito/notizie/mondo/mondo_rss.xml
+Linkiesta | https://www.linkiesta.it/feed/
+Formiche | https://formiche.net/feed/
+la Repubblica | https://www.repubblica.it/rss/homepage/rss2.0.xml
+La Stampa | https://www.lastampa.it/rss/copertina.xml
+Il Sole 24 Ore - Mondo | https://www.ilsole24ore.com/rss/mondo.xml
+Il Fatto Quotidiano | https://www.ilfattoquotidiano.it/feed/
+# Il Post refuses the script (HTTP 403). Left in so that a later run shows if that changes.
+Il Post | https://www.ilpost.it/feed/
+# Corriere della Sera: the homepage feed (https://www.corriere.it/rss/homepage.xml) stopped
+# updating in May 2024. The three section feeds below replace it: confirmed on 7 October,
+# about 100 items each, articles read in full.
+Corriere della Sera - Esteri | https://www.corriere.it/dynamic-feed/rss/section/esteri.xml
+Corriere della Sera - Politica | https://www.corriere.it/dynamic-feed/rss/section/politica.xml
+Corriere della Sera - Economia | https://www.corriere.it/dynamic-feed/rss/section/economia.xml
+
+[Balkans press]
+European Western Balkans | https://europeanwesternbalkans.com/feed/
+Emerging Europe | https://emerging-europe.com/feed/
+# Balkan Insight: its robots.txt rules out automated reading of article pages; headline and summary only.
+Balkan Insight | https://balkaninsight.com/feed/
+# N1 English: switched off. The newest item in this feed is from December 2024.
+# N1 English | https://n1info.rs/english/feed/
+
+[Indo-Pacific press]
+The Interpreter (Lowy Institute) | https://www.lowyinstitute.org/the-interpreter/rss.xml
+The Strategist (ASPI) | https://www.aspistrategist.org.au/feed/
+The Diplomat | https://thediplomat.com/feed/
+Nikkei Asia | https://asia.nikkei.com/rss/feed/nar
+South China Morning Post | https://www.scmp.com/rss/91/feed
+The Straits Times - Asia | https://www.straitstimes.com/news/asia/rss.xml
+The Hindu - International | https://www.thehindu.com/news/international/feeder/default.rss
+# The Japan Times refused every article page in the week to 7 October (30 of 30): headline and summary only.
+The Japan Times | https://www.japantimes.co.jp/feed/ | headlines-only
+# East Asia Forum refuses the script (HTTP 403). Left in so that a later run shows if that changes.
+East Asia Forum | https://eastasiaforum.org/feed/
